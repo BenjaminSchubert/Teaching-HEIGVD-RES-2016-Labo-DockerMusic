@@ -143,9 +143,9 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | How do we **define and build our own Docker image**? |
-| | 1. Create a docker file.
-| | 2. Open it and add `$ FROM ${IMAGE}`, with as image the image the docker will be based on.
-| | 3. Add various statements as needed.
+| | 1. Create a docker file. <br>
+| | 2. Open it and add `$ FROM ${IMAGE}`, with as image the image the docker will be based on. <br>
+| | 3. Add various statements as needed. <br>
 | | 4. Open a terminal, go to the folder containing the docker file and type `$ docker build -t ${IMAGE_TAG} ${PATH_TO_DOCKERFILE_DIRECTORY}` will create the docker image from the docker file in the current directory and build it into the destination directory with the given tag. |
 |Question | How can we use the `ENTRYPOINT` statement in our Dockerfile? |
 | | The ENTRYPOINT defines what will be ran when the image is run. `ENTRYPOINT ["node", "index.js"]` will run "node" with "index.js".
