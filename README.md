@@ -107,13 +107,13 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
 | | *Insert your diagram here...* |
 |Question | Who is going to **send UDP datagrams** and **when**? |
-| | The musicians, every second |
+| | The musicians, every second. |
 |Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received? |
 | | The Auditor will wait for it. Once received, it will add it to the list of active musicians. |
 |Question | What **payload** should we put in the UDP datagrams? |
-| | The sound played by the musician |
+| | The sound played by the musician. |
 |Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures? |
-| | In the server, we should have a list containing every musician that is active. In the client, we should have its UUID |
+| | In the server, we should have a list containing every musician that is active. In the client, we should have its UUID. |
 
 
 ## Task 2: implement a "musician" Node.js application
@@ -121,21 +121,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**?
-| | For an object o, `JSON.serialize(o)`.
-|Question | What is **npm**?
-| | The packet manager of Node.js. Allows for example installing and updating packages.
-|Question | What is the `npm install` command and what is the purpose of the `--save` flag?
-| | Install the package given as argument. The `--save` flag allows to add the package to the list of dependencies in `package.json`.
-|Question | How can we use the `https://www.npmjs.com/` web site?
-| | Various info can be found to a package by inputing its name in the search field.
-|Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122?
-| | We can use the `uuid` package since it generates RFC4122 UUIDS.
-|Question | In Node.js, how can we execute a function on a **periodic** basis?
-| | Using the `setInterval` method. Takes the function to call and the time interval between each call, as milliseconds.
-|Question | In Node.js, how can we **emit UDP datagrams**?
-| | *Enter your response here...*
-|Question | In Node.js, how can we **access the command line arguments**?
-| | *Enter your response here...*
+| | For an object o, `JSON.serialize(o)`. |
+|Question | What is **npm**? |
+| | The packet manager of Node.js. Allows for example installing and updating packages. |
+|Question | What is the `npm install` command and what is the purpose of the `--save` flag? |
+| | Install the package given as argument. The `--save` flag allows to add the package to the list of dependencies in `package.json`.|
+|Question | How can we use the `https://www.npmjs.com/` web site? |
+| | Various info can be found to a package by inputing its name in the search field. |
+|Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
+| | We can use the `uuid` package since it generates RFC4122 UUIDS. |
+|Question | In Node.js, how can we execute a function on a **periodic** basis? |
+| | Using the `setInterval` method. Takes the function to call and the time interval between each call, as milliseconds. |
+|Question | In Node.js, how can we **emit UDP datagrams**? |
+| | By creating a socket using the `createSocket` function defined in the `dgram` module and giving it the wanted protocol : `dgram.createSocket("udp4")`.  |
+|Question | In Node.js, how can we **access the command line arguments**? |
+| | By reading the `argv` field (an array) of the `process` object. The first element is 'node', the second the name of the JavaScript file and the next elements are the additional command line arguments. |
 
 
 ## Task 3: package the "musician" app in a Docker image
