@@ -140,27 +140,30 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 
 ## Task 3: package the "musician" app in a Docker image
 
-| #  | Topic
-| ---  | ---
-|Question | How do we **define and build our own Docker image**?
-| | *Enter your response here...*
-|Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?
-| | *Enter your response here...*
+| #  | Topic |
+| ---  | --- |
+|Question | How do we **define and build our own Docker image**? |
+| | 1. Create a docker file.
+| | 2. Open it and add `$ FROM ${IMAGE}`, with as image the image the docker will be based on.
+| | 3. Add various statements as needed.
+| | 4. Open a terminal, go to the folder containing the docker file and type `$ docker build -t ${IMAGE_TAG} ${PATH_TO_DOCKERFILE_DIRECTORY}` will create the docker image from the docker file in the current directory and build it into the destination directory with the given tag. |
+|Question | How can we use the `ENTRYPOINT` statement in our Dockerfile? |
+| | The ENTRYPOINT defines what will be ran when the image is run. `ENTRYPOINT ["node", "index.js"]` will run "node" with "index.js".
 |Question | After building our Docker image, how do we use it to **run containers**?
-| | *Enter your response here...*
+| | `$ docker run ${IMAGE}`. |
 |Question | How do we get the list of all **running containers**?
-| | *Enter your response here...*
+| | `$ docker ps`. |
 |Question | How do we **stop/kill** one running container?
-| | *Enter your response here...*
+| | `$ docker kill ${CONTAINER}`. |
 |Question | How can we check that our running containers are effectively sending UDP datagrams?
-| | *Enter your response here...*
+| | `$ tcpdump -i ${INTERFACE}`. If there is something printed periodically, it works. |
 
 
 ## Task 4: implement an "auditor" Node.js application
 
-| #  | Topic
-| ---  | ---
-|Question | With Node.js, how can we listen for UDP datagrams in a multicast group?
+| #  | Topic |
+| ---  | --- |
+|Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
 | | *Enter your response here...*
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**? 
 | | *Enter your response here...*
