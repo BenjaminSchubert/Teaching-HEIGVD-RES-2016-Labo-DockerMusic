@@ -133,7 +133,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
 | | Using the `setInterval` method. Takes the function to call and the time interval between each call, as milliseconds. |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
-| | By creating a socket using the `createSocket` function defined in the `dgram` module and giving it the wanted protocol : `dgram.createSocket("udp4")`.  |
+| | By first creating a socket using the `createSocket` function defined in the `dgram` module and giving it the wanted protocol : `dgram.createSocket("udp4")`. We must then call the `send` function on the created socket.  |
 |Question | In Node.js, how can we **access the command line arguments**? |
 | | By reading the `argv` field (an array) of the `process` object. The first element is 'node', the second the name of the JavaScript file and the next elements are the additional command line arguments. |
 
@@ -161,15 +161,15 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic |
 | ---  | --- |
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
-| | *Enter your response here...*
-|Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**? 
-| | *Enter your response here...*
-|Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting? 
-| | *Enter your response here...*
-|Question | When and how do we **get rid of inactive players**? 
-| | *Enter your response here...*
-|Question | How do I implement a **simple TCP server** in Node.js? 
-| | *Enter your response here...*
+| | We must first create the socket using `createSocket` from the `dgram` module with `udp4`as parameter.  |
+|Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**? |
+| | *Enter your response here...* |
+|Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting? |
+| | *Enter your response here...* |
+|Question | When and how do we **get rid of inactive players**? |
+| | *Enter your response here...* |
+|Question | How do I implement a **simple TCP server** in Node.js? |
+| | *Enter your response here...* |
 
 
 ## Task 5: package the "auditor" app in a Docker image
