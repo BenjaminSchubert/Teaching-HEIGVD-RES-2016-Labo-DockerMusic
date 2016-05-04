@@ -1,29 +1,38 @@
 const dgram = require("dgram");
+const uuid = require("node-uuid");
 
 const instruments = {
-	piano: new Buffer("ti-ta-ti"),
-	trumpet: new Buffer("pouet"),
-	flute: new Buffer("trulu"),
-	violin: new Buffer("gzi-gzi"),
-	drum: new Buffer("boum-boum")
+	piano: "ti-ta-ti",
+	trumpet: "pouet",
+	flute: "trulu",
+	violin: "gzi-gzi",
+	drum: "boum-boum"
 }
 
+
 function sendSound() {
-	socket.send(playing, 0, playing.length, 8800, "255.255.255.255", function(err, bytes) {});
+	socket.send(json_payload, 0, json_payload.length, 8800, "255.255.255.255", function(err, bytes) {});
 }
 
 
 // check instrument
-playing = instruments[process.argv[2]];
+var playing = {
+	sound: instruments[process.argv[2]]
+}
 
-if(playing == null) {
+if(playing["sound"] == null) {
 	console.log("Instrument not recognized. Got " + process.argv[2]);
 	process.exit(1);
 }
 
+// generate UUID
+playing.uuid = uuid.v4();
+
+// prepare json payload
+json_payload = new Buffer(JSON.stringify(playing));
 
 // Create socket
-socket = dgram.createSocket("udp4");
+var socket = dgram.createSocket("udp4");
 
 socket.bind(0, "", function() {
 	socket.setBroadcast(true);

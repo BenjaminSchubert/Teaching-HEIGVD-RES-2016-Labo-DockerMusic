@@ -1,0 +1,16 @@
+{
+  "name": "image-auditor",
+  "version": "1.0.0",
+  "description": "An auditor listening to music and giving information about it",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaminSchubert/Teaching-HEIGVD-RES-2016-Labo-DockerMusic.git"
+  },
+  "author": "Benjamin Schubert and Basile Vu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BenjaminSchubert/Teaching-HEIGVD-RES-2016-Labo-DockerMusic/issues"
+  },
+  "homepage": "https://github.com/BenjaminSchubert/Teaching-HEIGVD-RES-2016-Labo-DockerMusic#readme"
+}

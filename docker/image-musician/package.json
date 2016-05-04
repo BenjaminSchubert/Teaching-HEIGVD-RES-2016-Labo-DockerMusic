@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "A musician sending udp packets representing music",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/wasadigi/Teaching-HEIGVD-RES/"
+    "url": "https://github.com/BenjaminSchubert/Teaching-HEIGVD-RES-2016-Labo-DockerMusic"
   },
+  "bugs": {
+    "url": "https://github.com/BenjaminSchubert/Teaching-HEIGVD-RES-2016-Labo-DockerMusic"
+  },
+  "homepage": "https://github.com/BenjaminSchubert/Teaching-HEIGVD-RES-2016-Labo-DockerMusic",
+
   "author": "Benjamin Schubert and Basile Vu",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-uuid": "^1.4.7"
+  }
 }
