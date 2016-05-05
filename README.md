@@ -121,7 +121,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #  | Topic
 | ---  | ---
 |Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**?
-| | For an object o, `JSON.serialize(o)`. |
+| | For an object o, `JSON.stringify(o)`. |
 |Question | What is **npm**? |
 | | The packet manager of Node.js. Allows for example installing and updating packages. |
 |Question | What is the `npm install` command and what is the purpose of the `--save` flag? |
