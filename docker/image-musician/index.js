@@ -1,7 +1,13 @@
+// required for udp sockets
 const dgram = require("dgram");
+
+// required to generate uuids
 const uuid = require("node-uuid");
+
+// multicast address
 const MULTICAST_ADDRESS = "239.255.22.1";
 
+// list of available instruments
 const instruments = {
 	piano: "ti-ta-ti",
 	trumpet: "pouet",
@@ -10,7 +16,7 @@ const instruments = {
 	drum: "boum-boum"
 };
 
-
+// sends the sound to the server
 function sendSound() {
 	socket.send(json_payload, 0, json_payload.length, 8800, MULTICAST_ADDRESS, function(err, bytes) {});
 }
@@ -20,6 +26,7 @@ function sendSound() {
 var playing = {
 	sound: instruments[process.argv[2]]
 };
+
 
 if(playing["sound"] === undefined) {
 	console.log("Instrument not recognized. Got " + process.argv[2]);
@@ -41,4 +48,5 @@ socket.bind(0, "", function() {
 });
 
 
+// send sound every second
 setInterval(sendSound, 1000);
