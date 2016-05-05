@@ -131,7 +131,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122? |
 | | We can use the `uuid` package since it generates RFC4122 UUIDS. |
 |Question | In Node.js, how can we execute a function on a **periodic** basis? |
-| | Using the `setInterval` method. Takes the function to call and the time interval between each call, as milliseconds. |
+| | Using the `setInterval` function. Takes the function to call and the time interval between each call, as milliseconds. |
 |Question | In Node.js, how can we **emit UDP datagrams**? |
 | | By first creating a socket using the `createSocket` function defined in the `dgram` module and giving it the wanted protocol : `dgram.createSocket("udp4")`. We must then call the `send` function on the created socket.  |
 |Question | In Node.js, how can we **access the command line arguments**? |
@@ -163,21 +163,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |Question | With Node.js, how can we listen for UDP datagrams in a multicast group? |
 | | We must first create the socket using `createSocket` from the `dgram` module with `udp4`as parameter.  |
 |Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**? |
-| | *Enter your response here...* |
+| | A dictionary works with keys and values, exactly as the Map. When the Map is created, we can use the set and get methods to respectively add/modify elements or fetch them, using anything as key and anything as value. |
 |Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting? |
-| | *Enter your response here...* |
+| | `Moment.js` allows us to easily format dates and get the difference between a given time and current time as seconds with `moment().diff(${DATE}, 'seconds')`  |
 |Question | When and how do we **get rid of inactive players**? |
-| | *Enter your response here...* |
+| | We get rid of inactive players when the don't play any sound for 5 seconds. In order to do this, we can periodically compare the last time they played with the current time and remove them if needed. |
 |Question | How do I implement a **simple TCP server** in Node.js? |
-| | *Enter your response here...* |
+| | By calling the `createServer` function of the `net` module. We can pass to this function a callback used when a new connection is established.  |
 
 
 ## Task 5: package the "auditor" app in a Docker image
 
-| #  | Topic
-| ---  | ---
-|Question | How do we validate that the whole system works, once we have built our Docker image?
-| | *Enter your response here...*
+| #  | Topic|
+| ---  | --- |
+|Question | How do we validate that the whole system works, once we have built our Docker image? |
+| | We simply run our docker images: the auditor first and the musician next, providing the name of the instrument. Then we establish a connection with the auditor (with telnet for example) and see if the musician is active. We can kill the musician, connect again later to the auditor and notice that there isn't any musician playing. |
 
 
 ## Constraints
