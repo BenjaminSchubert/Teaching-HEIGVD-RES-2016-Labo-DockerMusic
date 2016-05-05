@@ -1,6 +1,4 @@
-FROM fedora:latest
-
-RUN dnf install npm -y && dnf clean all
+FROM node:latest
 
 RUN useradd -m nodejs
 

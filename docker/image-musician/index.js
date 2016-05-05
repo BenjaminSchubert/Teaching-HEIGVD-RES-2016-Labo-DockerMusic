@@ -8,7 +8,7 @@ const instruments = {
 	flute: "trulu",
 	violin: "gzi-gzi",
 	drum: "boum-boum"
-}
+};
 
 
 function sendSound() {
@@ -19,7 +19,7 @@ function sendSound() {
 // check instrument
 var playing = {
 	sound: instruments[process.argv[2]]
-}
+};
 
 if(playing["sound"] === undefined) {
 	console.log("Instrument not recognized. Got " + process.argv[2]);
