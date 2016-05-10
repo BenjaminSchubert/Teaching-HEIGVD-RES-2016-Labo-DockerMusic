@@ -10,6 +10,14 @@ const MULTICAST_ADDRESS = "239.255.22.1";
 // map of all active musicians
 var musicians = new Map();
 
+// list of legal sounds
+const sounds = {
+	"ti-ta-ti": "piano",
+	"pouet": "trumpet",
+	"trulu": "flute",
+	"gzi-gzi": "violin",
+	"boum-boum": "drum"
+};
 
 /**
  * Periodically cleans up the map of active musicians if
@@ -53,8 +61,16 @@ udpServer.on("message", function (msg, rinfo) {
 	var date = new Date();
 
 	if(musicians.get(ms.uuid) === undefined) {
-		ms.activeSince = date;
-		musicians.set(ms.uuid, {musician: ms});
+		if(sounds[ms.sound] === undefined) {
+			// the sound is undefined
+			return;
+		}
+		var saved_info = {
+			activeSince: date,
+			uuid: ms.uuid,
+			instrument: sounds[ms.sound]
+		}
+		musicians.set(ms.uuid, {musician: saved_info});
 	}
 	musicians.get(ms.uuid).lastSeen = date;
 });

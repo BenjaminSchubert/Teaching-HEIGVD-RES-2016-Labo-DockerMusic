@@ -1,5 +1,7 @@
 FROM node:latest
 
+EXPOSE 2205
+
 RUN useradd -m nodejs
 
 RUN mkdir /home/nodejs/app
