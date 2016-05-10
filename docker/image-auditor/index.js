@@ -4,6 +4,9 @@ const dgram = require("dgram");
 // required for tcp sockets
 const net = require("net");
 
+// for ip address
+const os = require("os");
+
 // multicast address to use
 const MULTICAST_ADDRESS = "239.255.22.1";
 
@@ -90,8 +93,10 @@ udpServer.on("error", function(err) {
  * Output udp server address once the program is up and running
  */
 udpServer.on("listening", function () {
-	var address = udpServer.address();
-	console.log("server listening on " + address.address + ":" + address.port);
+	var interfaces = os.networkInterfaces();
+	for(var ip in interfaces) {
+		console.log("Server listening on " + interfaces[ip][0]["address"]);
+	}
 });
 
 
